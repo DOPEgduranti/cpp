@@ -6,7 +6,7 @@
 /*   By: gduranti <gduranti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 14:36:24 by gduranti          #+#    #+#             */
-/*   Updated: 2024/06/24 09:53:30 by gduranti         ###   ########.fr       */
+/*   Updated: 2024/06/28 12:31:31 by gduranti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <iomanip>
 # include <climits>
 # include <sstream>
+# include <cstdlib>
 
 class ScalarConverter {
 	public:

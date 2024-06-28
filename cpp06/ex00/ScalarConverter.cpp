@@ -6,7 +6,7 @@
 /*   By: gduranti <gduranti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:23:22 by gduranti          #+#    #+#             */
-/*   Updated: 2024/06/24 09:56:13 by gduranti         ###   ########.fr       */
+/*   Updated: 2024/06/28 12:35:46 by gduranti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,7 @@ void printInt(long i) {
 
 void printChar(std::string str) {
 	bool dot = false;
-	std::stringstream ss;
-	ss << str;
-	double d;
-	ss >> d;
+	double d = std::strtod(str.c_str(), NULL);
 	if (d > 127 || d < 0) {
 		std::cout << "char: impossible" << std::endl;
 		return ;
@@ -115,10 +112,7 @@ void convertFromChar(char c) {
 
 void convertFromInt(std::string str) {
 	printChar(str);
-	std::stringstream ss;
-	ss << str;
-	long i;
-	ss >> i;
+	long i = std::strtol(str.c_str(), NULL, 10);
 	printInt(i);
 	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f" << std::endl
 		<< "double: " << std::fixed << std::setprecision(1) << static_cast<double>(i) << std::endl;
@@ -128,10 +122,7 @@ void convertFromFloat(std::string str, int precision) {
 	if (precision == 0)
 		precision++;
 	printChar(str);
-	std::stringstream ss;
-	ss << str;
-	float f;
-	ss >> f;
+	float f = std::strtof(str.c_str(), NULL);
 	printInt(static_cast<long>(f));
 	std::cout << "float: " << std::fixed << std::setprecision(precision) << f << "f" << std::endl
 		<< "double: " << std::fixed << std::setprecision(precision) << static_cast<double>(f) << std::endl;
@@ -141,10 +132,7 @@ void convertFromDouble(std::string str, int precision) {
 	if (precision == 0)
 		precision++;
 	printChar(str);
-	std::stringstream ss;
-	ss << str;
-	double d;
-	ss >> d;
+	double d = std::strtod(str.c_str(), NULL);
 	printInt(static_cast<long>(d));
 	std::cout << "float: " << std::fixed << std::setprecision(precision) << static_cast<float>(d) << "f" << std::endl
 		<< "double: " << std::fixed << std::setprecision(precision) << d << std::endl;
