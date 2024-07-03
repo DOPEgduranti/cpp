@@ -43,10 +43,9 @@ void Span::addNumber(const int i) {
 void Span::addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end) {
 	if (end < start)
 		return ;
-	while (start < end) {
-		addNumber(*start);
-		start++;
-	}
+	if (this->_vec.size() + std::distance(start, end) > this->_size)
+		throw OutOfRangeException();
+	this->_vec.insert(this->_vec.end(), start, end);
 };
 
 int Span::shortestSpan() {
